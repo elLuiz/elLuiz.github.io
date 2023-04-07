@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script defer src="../../service/lyricsConverterService.js" type="text/javascript"></script>
+        <script defer src="./lyricsConverterApplication.js" type="text/javascript"></script> 
+        <title>QuintaLyrics</title>
+        <link rel="icon" type="image/x-icon" href="../assets/logo/song-lyrics.ico">
+        <link rel="stylesheet" href="home.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="presentation">
+            <h1>QuintaLyrics</h1>
+            <p>Insira a letra da música no box abaixo e clique em converter.</p>
+        </div>
+
+        <div class="lyrics-area">
+            <div class="lyrics">
+                <textarea 
+                id="lyrics"
+                cols="50" 
+                rows="40"></textarea>
+                
+                <button class="convert" onclick="startConversion()">Converter</button>
+            </div>
+
+
+            <div class="converted-text">
+                <textarea 
+                id="lyrics-converted"
+                cols="50" 
+                disabled="true"
+                rows="40"></textarea>
+
+                <button id="copy-to-clipboard" onclick="copyToClipboard()"></button>
+            </div>
+        </div>
+    </body>
+</html>
