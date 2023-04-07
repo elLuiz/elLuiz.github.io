@@ -4,7 +4,7 @@ function convert(lyrics) {
 }
 
 function removeUnwantedCharactersFromLyrics(lyrics) {
-    const regex = /^[^A-zÀ-ú?]|[^A-zÀ-ú?\s]+$/gm;
+    const regex = /^[^A-zÀ-ú?(]|[^A-zÀ-ú?)\s]+$/gm;
     return lyrics.replace(regex, "");
 }
 
