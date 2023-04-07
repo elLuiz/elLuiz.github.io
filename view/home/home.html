@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script defer src="../service/lyricsConverterService.js" type="js"></script>
+        <title>QuintaLyrics</title>
+        <link rel="icon" type="image/x-icon" href="../assets/logo/song-lyrics.ico">
+        <link rel="stylesheet" href="home.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="presentation">
+            <h1>QuintaLyrics</h1>
+            <p>Insira a letra da música no box abaixo e clique em converter.</p>
+        </div>
+        <!-- <div class="tutorial">
+            <h2>Como utilizar?</h2>
+            <p>A utilização do QuintaLyrics é bem simples: primeiro, selecione a letra da música e coloque no quadro abaixo; logo após, clique no botão <strong>Converter</strong>.</p> 
+            <p>O resultado será mostrado em um modal, juntamente com a opção de copiar o conteúdo convertido.</p>
+        </div> -->
+
+        <div class="lyrics-area">
+            <textarea 
+                id="lyrics"
+                cols="50" 
+                rows="40"></textarea>
+            <button class="convert" onclick="() => console.log(convert('Tá chorando por quê?\nSe você tem um Deus;\nQue cuida de você!, oh\nE jamais te esqueceu\nEle sabe de tudo\nQue você está passando\nE mandou te dizer;\nQue Ele está cuidando\nLembra de onde você veio\nE aonde que você chegou\nLembra de todos os livramentos\nQue você já passou\nNem era para você estar aqui\nMas Deus falou assim\nEsse aí vou levantar -202-\nE onde colocar a mão Eu vou abençoar\nNão chore, quem cuida de você não dorme\nLevanta, tem muita gente que te ama\nDeus mandou te dizer que vai acontecer\nDeus mandou te falar que tudo vai passar\nLembra de onde você veio\nE aonde que você chegou\nLembra de todos os livramentos\nQue você já passou\nNem era para você estar aqui\nMas Deus falou assim\nEsse aí vou levantar\nE onde colocar a mão Eu vou abençoar\nNão chore, quem cuida de você não dorme\nLevanta, tem muita gente que te ama\nDeus mandou te dizer que vai acontecer\nDeus mandou te falar que tudo vai passar\nNão chore, quem cuida de você não dorme\nLevanta, tem muita gente que te ama\nDeus mandou te dizer que vai acontecer\nDeus mandou te falar que tudo vai passar\nDeus mandou te dizer que vai acontecer\nDeus mandou te falar que tudo vai passar'))">Converter</button>
+        </div>
+
+        <footer>
+            <button>Help</button>
+            <button>Padrão de busca</button>
+        </footer>
+    </body>
+</html>
