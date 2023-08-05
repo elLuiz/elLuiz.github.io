@@ -24,4 +24,5 @@ function copyToClipboard() {
     text.select();
     text.setSelectionRange(0, 99_999);
     navigator.clipboard.writeText(text.value);
+    window.alert("Letra copiada com sucesso!");
 }
