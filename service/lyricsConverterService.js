@@ -1,6 +1,7 @@
 function convert(lyrics) {
-    let onlyAllowedCharacters = removeUnwantedCharactersFromLyrics(lyrics);
-    return separateLines(onlyAllowedCharacters);
+    let converted = removeUnwantedCharactersFromLyrics(lyrics);
+    converted = removeCommaAtTheEnd(converted);
+    return separateLines(converted);
 }
 
 function removeUnwantedCharactersFromLyrics(lyrics) {
@@ -8,7 +9,11 @@ function removeUnwantedCharactersFromLyrics(lyrics) {
     return lyrics.replace(regex, "");
 }
 
+function removeCommaAtTheEnd(lyrics) {
+    return lyrics.replace(/,$/, "");
+}
+
 function separateLines(lyrics) {
     const regex = /\n/g;
-    return lyrics.replace(regex, "\n\n")
+    return lyrics.replace(regex, "\n\n");
 }
