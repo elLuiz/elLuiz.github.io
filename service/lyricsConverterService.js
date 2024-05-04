@@ -1,6 +1,7 @@
 function convert(lyrics) {
     let converted = removeUnwantedCharactersFromLyrics(lyrics);
     converted = removeCommaAtTheEnd(converted);
+    converted = toUpperCase(converted);
     return separateLines(converted);
 }
 
@@ -11,6 +12,10 @@ function removeUnwantedCharactersFromLyrics(lyrics) {
 
 function removeCommaAtTheEnd(lyrics) {
     return lyrics.replace(/,$/, "");
+}
+
+function toUpperCase(lyrics) {
+    return lyrics.toUpperCase();
 }
 
 function separateLines(lyrics) {
