@@ -23,6 +23,11 @@ function copyToClipboard() {
     const text = document.getElementById("lyrics-converted");
     text.select();
     text.setSelectionRange(0, 99_999);
-    navigator.clipboard.writeText(text.value);
-    window.alert("Letra copiada com sucesso!");
+    navigator.clipboard.writeText(text.value)
+        .then(() => {
+            window.alert("Letra copiada com sucesso!");
+        })
+        .catch(() => {
+            window.alert("Algo deu errado ao copiar a letra da música! Por favor, tente novamente.")
+        })
 }
