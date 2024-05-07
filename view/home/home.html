@@ -12,6 +12,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a6313fba55.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -24,9 +25,10 @@
                 <textarea 
                 id="lyrics"
                 cols="50" 
+                placeholder="Insira a letra aqui."
                 rows="40"></textarea>
                 <div class="conversion-options">
-                    <button class="convert" onclick="startConversion()">Converter</button>
+                    <button class="convert" onclick="startConversion()">Formatar <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
 
@@ -38,7 +40,7 @@
                 disabled="true"
                 rows="40"></textarea>
 
-                <button id="copy-to-clipboard" onclick="copyToClipboard()"></button>
+                <button id="copy-to-clipboard" onclick="copyToClipboard()"><i class="fa-solid fa-copy"></i></button>
             </div>
         </div>
 

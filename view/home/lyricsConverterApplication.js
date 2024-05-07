@@ -1,9 +1,10 @@
 function startConversion() {
     const lyrics = document.getElementById("lyrics").value;
-    const convertedLyricsTextArea = document.getElementById("lyrics-converted");
     if(!isEmpty(lyrics)) {
         const converted = convert(lyrics);
+        const convertedLyricsTextArea = document.getElementById("lyrics-converted");
         convertedLyricsTextArea.value = converted;
+        convertedLyricsTextArea.className ="lyrics-converted-sucess"
         displayCopyToClipboardButton();
     } else {
         window.alert("Por favor, preencha o primeiro box")
