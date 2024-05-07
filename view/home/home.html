@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script defer src="../../service/lyricsConverterService.js" type="text/javascript"></script>
         <script defer src="./lyricsConverterApplication.js" type="text/javascript"></script> 
+        <script src="../../service/musicFetcher.js" type="text/javascript"></script>
         <title>QuintaLyrics</title>
         <link rel="icon" type="image/x-icon" href="../../assets/logo/song-lyrics.ico">
         <link rel="stylesheet" href="home.css">
@@ -40,5 +41,13 @@
                 <button id="copy-to-clipboard" onclick="copyToClipboard()"></button>
             </div>
         </div>
+
+        <script> 
+            var params = new URLSearchParams(window.location.search)
+            var link = params.get("ref")
+            if (link && link.trim().length > 0) {
+                fetchLyric(link)
+            }
+        </script>
     </body>
 </html>
