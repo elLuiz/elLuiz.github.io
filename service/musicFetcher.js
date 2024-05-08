@@ -1,7 +1,7 @@
 async function fetchLyric(lyricsURL) {
     try {
         console.log(window.location.search)
-        var url = "http://localhost:8080/api/v1/lyrics?src=" + lyricsURL
+        var url = "http://https://quinta-lyrics-ws.onrender.com/api/v1/lyrics?src=" + lyricsURL
         const response = await fetch(url, {
             method: "GET",
             headers: {
