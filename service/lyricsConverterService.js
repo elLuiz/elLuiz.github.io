@@ -1,24 +1,34 @@
 function convert(lyrics) {
-    let converted = removeUnwantedCharactersFromLyrics(lyrics);
-    converted = removeCommaAtTheEnd(converted);
-    converted = toUpperCase(converted);
-    return separateLines(converted);
+    let converted = removeUnwantedCharactersFromLyrics(lyrics)
+    converted = removeCommaAtTheEnd(converted)
+    converted = toUpperCase(converted)
+    converted = replaceStrophes(converted)
+    return separateLines(converted)
 }
 
 function removeUnwantedCharactersFromLyrics(lyrics) {
-    const regex = /^[^A-zÀ-ú?(]|[^A-zÀ-ú?)\s]+$/gm;
-    return lyrics.replace(regex, "");
+    const regex = /^[^A-zÀ-ú?(\n)\s\d][^A-zÀ-ú?]+$/gm
+    return lyrics.replace(regex, "")
 }
 
 function removeCommaAtTheEnd(lyrics) {
-    return lyrics.replace(/,$/, "");
+    return lyrics.replace(/,$/, "")
 }
 
 function toUpperCase(lyrics) {
-    return lyrics.toUpperCase();
+    return lyrics.toUpperCase()
+}
+
+function replaceStrophes(lyrics) {
+    let groupsMap = createStropheGroups(lyrics)
+    groupsMap.forEach((value, key) => {
+        lyrics = lyrics.replace(new RegExp(key, "gm"), value)
+    })
+    return lyrics;
 }
 
 function separateLines(lyrics) {
-    const regex = /\n/g;
-    return lyrics.replace(regex, "\n\n");
+    return lyrics.split(/\n/)
+        .filter(verse => verse.trim().length > 0)
+        .join("\n\n")
 }

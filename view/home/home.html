@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script defer src="../../service/lyricsGroupService.js"></script>
         <script defer src="../../service/lyricsConverterService.js" type="text/javascript"></script>
         <script defer src="./lyricsConverterApplication.js" type="text/javascript"></script> 
         <script src="../../service/musicFetcher.js" type="text/javascript"></script>
@@ -35,10 +36,11 @@
 
             <div class="converted-text">
                 <textarea 
-                id="lyrics-converted"
-                cols="50" 
-                disabled="true"
-                rows="40"></textarea>
+                    id="lyrics-converted"
+                    cols="50" 
+                    disabled="true"
+                    rows="40">
+                </textarea>
                 
                 <div class="options">
                     <button id="copy-to-clipboard" onclick="copyToClipboard()">
