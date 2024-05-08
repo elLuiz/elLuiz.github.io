@@ -82,9 +82,12 @@ body {
 }
 
 .converted-text {
-    position: relative;
     width: 50%;
     display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    justify-content: center;
+    align-items: start;
 }
 
 .converted-text textarea {
@@ -122,20 +125,42 @@ body {
     justify-content: end;
 }
 
+.options {
+    width: 100%;
+    margin-top: .1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
 #copy-to-clipboard {
-    position: absolute;
-    left: 86%;
-    right: 20px;
-    display: none;
-    width: 40px;
-    height: 40px;
-    flex-direction: column;
+    /*display: none;*/
+    width: 150px;
+    height: 50px;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    justify-items: center;
     cursor: pointer;
-    border: none;
+    border: 1px solid #006b37;
     background-color: transparent;
-    font-size: 2rem;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    letter-spacing: 1px;
+    background-color: #006b37;
+    color: aliceblue;
+    box-shadow: 1px 1px 5px #004F29;
+}
+
+#copy-to-clipboard i {
+    font-size: 1.5rem;
+}
+
+#copy-to-clipboard span {
+    height: 100%;
+    width: 100%;
+    font-size: 1rem;
 }
 
 #copy-to-clipboard:hover  {
