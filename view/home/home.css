@@ -134,7 +134,7 @@ body {
 }
 
 #copy-to-clipboard {
-    /*display: none;*/
+    display: none;
     width: 150px;
     height: 50px;
     flex-direction: row;
