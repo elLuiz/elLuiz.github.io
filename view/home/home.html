@@ -6,6 +6,7 @@
         <script defer src="../../service/lyricsGroupService.js"></script>
         <script defer src="../../service/lyricsConverterService.js" type="text/javascript"></script>
         <script defer src="./lyricsConverterApplication.js" type="text/javascript"></script> 
+        <script defer src="./lyricsStrophes.js" type="text/javascript"></script> 
         <script src="../../service/musicFetcher.js" type="text/javascript"></script>
         <title>QuintaLyrics</title>
         <link rel="icon" type="image/x-icon" href="../../assets/logo/song-lyrics.ico">
@@ -29,12 +30,18 @@
                 placeholder="Insira a letra aqui."
                 rows="40"></textarea>
                 <div class="conversion-options">
-                    <button class="convert" onclick="startConversion()">Formatar <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="action-button see-strophes" onclick="visualizeStrophes()"><i class="fa-solid fa-font"></i> Estrofes</button>
+                    <button class="action-button convert" onclick="format()">Formatar <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
 
+            <div id="strophes-panel" class="secondary-panel strophes-panel">
+                <div id="strophes">
 
-            <div class="converted-text">
+                </div>
+            </div>
+
+            <div class="secondary-panel converted-text">
                 <textarea 
                     id="lyrics-converted"
                     cols="50" 

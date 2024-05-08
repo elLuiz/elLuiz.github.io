@@ -61,7 +61,7 @@ body {
     padding: 4px;
 }
 
-.convert {
+.action-button {
     width: 150px;
     height: 50px;
     font-size: 1rem;
@@ -71,23 +71,41 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     letter-spacing: 1px;
+}
+
+.convert {
     background-color: #006b37;
     color: aliceblue;
     box-shadow: 1px 1px 5px #004F29;
 }
 
 .convert:hover {
-    background-color: #00351b;
-    transition: 10ms;
+    background-color: #068346;
 }
 
-.converted-text {
+.see-strophes {
+    background-color: #ffb554;
+}
+
+.see-strophes:hover {
+    background-color: #fdb95f;
+}
+
+.action-button:hover {
+    transition: 15ms;
+}
+
+.secondary-panel {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-items: flex-start;
     justify-content: center;
     align-items: start;
+}
+
+.strophes-panel {
+    display: none;
 }
 
 .converted-text textarea {
@@ -110,7 +128,7 @@ body {
 .conversion-options {
     width: 90%;
     display: flex;
-    justify-content: end;
+    justify-content: space-evenly;
 }
 
 .options {

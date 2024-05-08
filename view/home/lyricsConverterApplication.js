@@ -1,4 +1,4 @@
-function startConversion() {
+function format() {
     const lyrics = document.getElementById("lyrics").value;
     if(!isEmpty(lyrics)) {
         const converted = convert(lyrics);
