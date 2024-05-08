@@ -158,9 +158,9 @@ body {
 }
 
 #copy-to-clipboard span {
-    height: 100%;
-    width: 100%;
+    margin-left: .2rem;
     font-size: 1rem;
+    text-align: center;
 }
 
 #copy-to-clipboard:hover  {
