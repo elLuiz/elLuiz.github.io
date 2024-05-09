@@ -80,6 +80,10 @@ body {
     margin-right: .5rem;
 }
 
+.dependent-on-input {
+    cursor: not-allowed;
+}
+
 .convert {
     background-color: #006b37;
     color: aliceblue;
