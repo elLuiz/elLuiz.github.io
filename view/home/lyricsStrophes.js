@@ -2,6 +2,7 @@ function visualizeStrophes() {
     const lyrics = document.getElementById("lyrics").value
     if (isNotEmpty(lyrics)) {
         const parentNode = document.getElementById("strophes")
+        parentNode.replaceChildren()
         strophes = createStropheGroups(lyrics)
         createStrophesAsParagraphs(parentNode)
         const panel = document.getElementById("strophes-panel")
@@ -40,7 +41,7 @@ function visualizeStrophes() {
             const action = document.createElement("button")
             action.addEventListener("click", () => addStrophe(key))
             action.className = "add-strophe"
-            action.innerHTML = "<i class='fa-solid fa-backward'></i> Adicionar estrofe"
+            action.innerHTML = "<i class='fa-solid fa-music'></i> Adicionar estrofe"
             stropheFooter.appendChild(action)
             return stropheFooter
         }
