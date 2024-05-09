@@ -1,4 +1,9 @@
+html {
+    height: 100%;
+}
+
 body {
+    height: 100%;
     overflow-x: hidden;
     background-color: rgb(218, 218, 218);
     font-family: 'Roboto';
@@ -35,15 +40,11 @@ body {
 
 .lyrics-area {
     padding: 10px;
-    width: 100%;
+    height: 90%;
     display: flex;
     flex-direction: row;
     align-items: start;
-    justify-content: center;
-}
-
-.lyrics {
-    width: 50%;
+    justify-content: space-evenly;
 }
 
 .lyrics-area textarea {
@@ -96,7 +97,6 @@ body {
 }
 
 .secondary-panel {
-    width: 50%;
     display: flex;
     flex-direction: column;
     justify-items: flex-start;
@@ -105,6 +105,44 @@ body {
 }
 
 .strophes-panel {
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 2px solid black;
+}
+
+.strophes {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.strophe {
+    background-color: whitesmoke;
+    padding: 1px;
+    font-size: 1rem;
+    box-shadow: 1px 1px 5px #272727;
+    margin-bottom: .5rem;
+}
+
+.strophe-header {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px #272727;
+    justify-content: center;
+    justify-items: center;
+}
+
+.strophe h6 {
+    font-size: .9rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.converted-text {
     display: none;
 }
 
@@ -169,7 +207,7 @@ body {
     text-align: center;
 }
 
-#copy-to-clipboard:hover  {
+#copy-to-clipboard:hover {
     color: #a8a8a8;
 }
 
@@ -180,7 +218,7 @@ body {
 /*@see: https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp  */
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 /* Track */
