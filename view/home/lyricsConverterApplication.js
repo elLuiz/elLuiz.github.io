@@ -1,5 +1,5 @@
 function format() {
-    const lyrics = document.getElementById("lyrics").value;
+    const lyrics = getLyricsComponent().value;
     if(isNotEmpty(lyrics)) {
         const converted = convert(lyrics);
         displayModal(converted)
@@ -8,12 +8,25 @@ function format() {
     }
 }
 
+function getLyricsComponent() {
+    return document.getElementById("lyrics");
+}
+
 function displayModal(lyrics) {
     const convertedLyricsTextArea = document.getElementById("transformed-lyrics-body");
-    appendParagraphs(convertedLyricsTextArea, lyrics)
-    displayCopyToClipboardButton()
-    var modal = document.getElementById("modal");
-    modal.style.display = "block";
+    clearModal()
+    appendLyrics()
+  
+    function clearModal() {
+        convertedLyricsTextArea.replaceChildren()
+    }
+
+    function appendLyrics() {
+        appendParagraphs(convertedLyricsTextArea, lyrics)
+        displayCopyToClipboardButton()
+        var modal = document.getElementById("modal");
+        modal.style.display = "block";
+    }
 }
 
 function appendParagraphs(parentComponent, lyrics) {
@@ -54,12 +67,39 @@ function copyToClipboard() {
 }
 
 function addStrophe(stropheNumber) {
-    const lyricsTextArea = document.getElementById("lyrics")
+    const lyricsTextArea = getLyricsComponent()
     if (lyricsTextArea) {
         let lyrics = lyricsTextArea.value;
         if (isNotEmpty(lyrics)) {
             lyrics = lyrics.trim() + "\n\n" + stropheNumber
             lyricsTextArea.value = lyrics
+        }
+    }
+}
+
+function manageContentVisibility() {
+    const lyrics = getLyricsComponent().value
+    checkButtonsVisibility()
+    checkStrophesContent()
+    
+    function checkButtonsVisibility() {
+        const buttons = document.getElementsByClassName("dependent-on-input");
+        console.log(buttons);
+        if (isNotEmpty(lyrics)) {
+            Array.prototype.forEach.call(buttons, btn => {
+                btn.style.cursor = 'pointer'
+            });
+        } else {
+            Array.prototype.forEach.call(buttons, btn => {
+                btn.style.cursor = 'not-allowed'
+            });
+        }
+    }
+
+    function checkStrophesContent() {
+        if (isEmpty(lyrics)) {
+            const strophesContent = document.getElementById("strophes")
+            strophesContent.replaceChildren()
         }
     }
 }

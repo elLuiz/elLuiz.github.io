@@ -31,10 +31,12 @@
                 id="lyrics"
                 cols="50" 
                 placeholder="Insira a letra aqui."
+                onkeyup="manageContentVisibility()"
                 rows="40"></textarea>
+
                 <div class="conversion-options">
-                    <button class="action-button see-strophes" onclick="visualizeStrophes()"><i class="fa-solid fa-font"></i> Estrofes</button>
-                    <button id="transform" class="action-button convert" onclick="format()">Formatar <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="dependent-on-input action-button see-strophes" onclick="visualizeStrophes()"><i class="fa-solid fa-font"></i> Estrofes</button>
+                    <button id="transform" class="dependent-on-input action-button convert" onclick="format()">Formatar <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
 
