@@ -1,5 +1,5 @@
 function createStropheGroups(lyrics) {
-    if (lyrics && lyrics.length > 0) {
+    if (isNotEmpty(lyrics)) {
         var groups = lyrics.split(/\n{2}/gm)
         const groupsMap = new Map()
         let groupId = 1
@@ -10,6 +10,7 @@ function createStropheGroups(lyrics) {
                 groupId++
             }
         })
+        console.log(groups)
         return groupsMap
     }
     return new Map()

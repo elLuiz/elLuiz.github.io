@@ -22,7 +22,9 @@ function toUpperCase(lyrics) {
 function replaceStrophes(lyrics) {
     let groupsMap = createStropheGroups(lyrics)
     groupsMap.forEach((value, key) => {
-        lyrics = lyrics.replace(new RegExp(key, "gm"), value)
+        const rgex = new RegExp("^" + key + "$", "gm")
+        console.log(rgex)
+        lyrics = lyrics.replace(rgex, value)
     })
     return lyrics;
 }

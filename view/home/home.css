@@ -1,6 +1,11 @@
+html {
+    height: 100%;
+}
+
 body {
+    height: 100%;
     overflow-x: hidden;
-    background-color: rgb(218, 218, 218);
+    background-color: #ebebeb;
     font-family: 'Roboto';
     margin: 0;
 }
@@ -33,17 +38,18 @@ body {
     margin: 0;
 }
 
+.lyrics {
+    width: 50%;
+}
+
 .lyrics-area {
-    padding: 10px;
     width: 100%;
+    padding: 0px 10px 0 10px;
+    height: 90%;
     display: flex;
     flex-direction: row;
     align-items: start;
     justify-content: center;
-}
-
-.lyrics {
-    width: 50%;
 }
 
 .lyrics-area textarea {
@@ -51,7 +57,7 @@ body {
     height: 80%;
     resize: none;
     margin-bottom: .1em;
-    background-color: #c0c0c0;
+    background-color: #d6d6d6;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 1rem;
@@ -61,7 +67,7 @@ body {
     padding: 4px;
 }
 
-.convert {
+.action-button {
     width: 150px;
     height: 50px;
     font-size: 1rem;
@@ -71,23 +77,94 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
     letter-spacing: 1px;
+    margin-right: .5rem;
+}
+
+.convert {
     background-color: #006b37;
     color: aliceblue;
     box-shadow: 1px 1px 5px #004F29;
 }
 
 .convert:hover {
-    background-color: #00351b;
-    transition: 10ms;
+    background-color: #068346;
 }
 
-.converted-text {
-    width: 50%;
+.see-strophes {
+    background-color: #ffb554;
+}
+
+.see-strophes:hover {
+    background-color: #fdb95f;
+}
+
+.action-button:hover {
+    transition: 15ms;
+}
+
+.secondary-panel {
     display: flex;
     flex-direction: column;
     justify-items: flex-start;
     justify-content: center;
     align-items: start;
+}
+
+.strophes-panel {
+    display: flex;
+    height: 45rem;
+    width: 40%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 2px solid black;
+}
+
+.strophes {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.strophe {
+    background-color: whitesmoke;
+    padding: 1px;
+    font-size: 1rem;
+    box-shadow: 1px 1px 5px #272727;
+    margin-bottom: .5rem;
+}
+
+.strophe-header {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px #272727;
+    justify-content: center;
+    justify-items: center;
+}
+
+.strophe h6 {
+    font-size: .9rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.add-strophe {
+    background-color: #004F29;
+    border: none;
+    font-size: 1rem;
+    color: #ebebeb;
+    cursor: pointer;
+    width:100%;
+    height: 40px;
+}
+
+.add-strophe:hover {
+    background-color: #006b37;
+}
+
+.converted-text {
+    display: none;
 }
 
 .converted-text textarea {
@@ -110,7 +187,7 @@ body {
 .conversion-options {
     width: 90%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-start;
 }
 
 .options {
@@ -118,7 +195,7 @@ body {
     margin-top: .1em;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 #copy-to-clipboard {
@@ -151,7 +228,7 @@ body {
     text-align: center;
 }
 
-#copy-to-clipboard:hover  {
+#copy-to-clipboard:hover {
     color: #a8a8a8;
 }
 
@@ -162,7 +239,7 @@ body {
 /*@see: https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp  */
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 /* Track */
