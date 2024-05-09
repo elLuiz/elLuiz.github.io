@@ -1,6 +1,6 @@
 function visualizeStrophes() {
     const lyrics = document.getElementById("lyrics").value
-    if (lyrics && lyrics.length > 0) {
+    if (isNotEmpty(lyrics)) {
         const parentNode = document.getElementById("strophes")
         strophes = createStropheGroups(lyrics)
         createStrophesAsParagraphs(parentNode)
@@ -29,7 +29,7 @@ function visualizeStrophes() {
             const stropheHeader = document.createElement("div")
             stropheHeader.className = "strophe-header"
             const header = document.createElement("h6")
-            header.appendChild(document.createTextNode(`Estrofe: ${key}`))
+            header.appendChild(document.createTextNode(`Estrofe ${key}`))
             stropheHeader.appendChild(header)
             return stropheHeader
         }
@@ -38,9 +38,9 @@ function visualizeStrophes() {
             const stropheFooter = document.createElement("div")
             stropheFooter.className = "strophe-footer"
             const action = document.createElement("button")
-            action.addEventListener("click", () => console.log(key))
+            action.addEventListener("click", () => addStrophe(key))
             action.className = "add-strophe"
-            action.innerHTML = "<i class='fa-solid fa-plus'></i> Adicionar estrofe"
+            action.innerHTML = "<i class='fa-solid fa-backward'></i> Adicionar estrofe"
             stropheFooter.appendChild(action)
             return stropheFooter
         }
