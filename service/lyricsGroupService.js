@@ -10,7 +10,6 @@ function createStropheGroups(lyrics) {
                 groupId++
             }
         })
-        console.log(groups)
         return groupsMap
     }
     return new Map()

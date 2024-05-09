@@ -23,7 +23,6 @@ function replaceStrophes(lyrics) {
     let groupsMap = createStropheGroups(lyrics)
     groupsMap.forEach((value, key) => {
         const rgex = new RegExp("^" + key + "$", "gm")
-        console.log(rgex)
         lyrics = lyrics.replace(rgex, value)
     })
     return lyrics;
