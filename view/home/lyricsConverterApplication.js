@@ -80,7 +80,6 @@ function addStrophe(stropheNumber) {
 function manageContentVisibility() {
     const lyrics = getLyricsComponent().value
     checkButtonsVisibility()
-    checkStrophesContent()
     
     function checkButtonsVisibility() {
         const buttons = document.getElementsByClassName("dependent-on-input");
@@ -92,14 +91,19 @@ function manageContentVisibility() {
         } else {
             Array.prototype.forEach.call(buttons, btn => {
                 btn.style.cursor = 'not-allowed'
-            });
+            })
+            cleanStrophesContent()
         }
     }
 
-    function checkStrophesContent() {
-        if (isEmpty(lyrics)) {
-            const strophesContent = document.getElementById("strophes")
-            strophesContent.replaceChildren()
-        }
+    function cleanStrophesContent() {
+        const strophesContent = document.getElementById("strophes")
+        strophesContent.replaceChildren()
     }
+}
+
+function cleanLyrics() {
+    const lyrics = getLyricsComponent()
+    lyrics.value = ""
+    manageContentVisibility()
 }
