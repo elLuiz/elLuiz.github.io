@@ -6,8 +6,15 @@ function convert(lyrics) {
     return separateLines(converted)
 }
 
+function convertAndMaintainStrophes(lyrics) {
+    let converted = removeUnwantedCharactersFromLyrics(lyrics)
+    converted = removeCommaAtTheEnd(converted)
+    converted = toUpperCase(converted)
+    return replaceStrophes(converted)
+}
+
 function removeUnwantedCharactersFromLyrics(lyrics) {
-    const regex = /^[^A-zÀ-ú?(\n)\s\d][^A-zÀ-ú?]+$/gm
+    const regex = /^[^A-zÀ-ú?()\s\d]|[^A-zÀ-ú?()\s\d]+$/gm
     return lyrics.replace(regex, "")
 }
 

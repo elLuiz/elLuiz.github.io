@@ -2,7 +2,7 @@ function format() {
     const lyrics = getLyricsComponent().value;
     if(isNotEmpty(lyrics)) {
         const converted = convert(lyrics);
-        displayModal(converted)
+        displayModal(converted, false)
     } else {
         window.alert("Por favor, preencha o primeiro box")
     }
@@ -12,7 +12,7 @@ function getLyricsComponent() {
     return document.getElementById("lyrics");
 }
 
-function displayModal(lyrics) {
+function displayModal(lyrics, visualization) {
     const convertedLyricsTextArea = document.getElementById("transformed-lyrics-body");
     clearModal()
     appendLyrics()
@@ -22,21 +22,23 @@ function displayModal(lyrics) {
     }
 
     function appendLyrics() {
-        appendParagraphs(convertedLyricsTextArea, lyrics)
+        appendParagraphs()
         displayCopyToClipboardButton()
         var modal = document.getElementById("modal");
         modal.style.display = "block";
     }
-}
-
-function appendParagraphs(parentComponent, lyrics) {
-    lyrics.split("\n").forEach(verse => {
-        if (isNotEmpty(verse)) {
-            const paragraph = document.createElement("p")
-            paragraph.textContent = verse
-            parentComponent.appendChild(paragraph)
-        }
-    })
+    
+    function appendParagraphs() {
+        var lyricsParts = visualization && visualization === true ? lyrics.split("\n\n") : lyrics.split("\n")
+        lyricsParts.forEach(verse => {
+            if (isNotEmpty(verse)) {
+                const paragraph = document.createElement("p")
+                paragraph.setAttribute('style', 'white-space: pre')
+                paragraph.textContent = verse.replace("\n", "\r\n")
+                convertedLyricsTextArea.appendChild(paragraph)
+            }
+        })
+    }    
 }
 
 function displayCopyToClipboardButton() {
@@ -83,7 +85,6 @@ function manageContentVisibility() {
     
     function checkButtonsVisibility() {
         const buttons = document.getElementsByClassName("dependent-on-input");
-        console.log(buttons);
         if (isNotEmpty(lyrics)) {
             Array.prototype.forEach.call(buttons, btn => {
                 btn.style.cursor = 'pointer'
@@ -101,6 +102,13 @@ function manageContentVisibility() {
         strophesContent.replaceChildren()
     }
 }
+
+function preVisualize() {
+    const lyrics = getLyricsComponent().value
+    const content = convertAndMaintainStrophes(lyrics)
+    displayModal(content, true)
+}
+
 
 function cleanLyrics() {
     const lyrics = getLyricsComponent()
