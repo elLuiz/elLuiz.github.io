@@ -13,7 +13,7 @@ async function fetchLyric(lyricsURL) {
         const body = await response.json()
         fillLyricsContentDiv(body)
     } catch(error) {
-        console.log("Error: ", error)
+       throw error
     }
 }
 
